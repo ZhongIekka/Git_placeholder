@@ -142,13 +142,13 @@ After feature selection and engineering, the dataframe had a total of 9 columns.
 
 ### Heatmap
 
-![heatmap](https://zhongiekka.github.io/Capstone/img/crime_pd_heatmap.png)
+![heatmap](https://zhongiekka.github.io/img/crime_pd_heatmap.png)
 
 <p style='text-align: justify;'>Based on the heatmap, it can be seen that most of the features show little to no correlation. The features that are correlated are 'District' and 'Latitude', where there is relatively strong negative correlation of -0.58. All other variables have a Pearson correlation value of under 0.2.</p>
 
 ### Radviz
 
-![RadvizOriginal](https://zhongiekka.github.io/Capstone/img/crime_pd_radviz_original.png)
+![RadvizOriginal](https://zhongiekka.github.io/img/crime_pd_radviz_original.png)
 
 <p style='text-align: justify;'>The independent variables form an even unit circle and every datapoint is linked to each independent variable by a spring. The stiffness of each spring for every datapoint is represented by the value of that particular variable for that datapoint.</p>
 
@@ -166,7 +166,7 @@ After feature selection and engineering, the dataframe had a total of 9 columns.
 
 <p style='text-align: justify;'>The radviz plot of the relationship between each dummified variable is shown below:</p>
 
-![Radviz](https://zhongiekka.github.io/Capstone/img/crime_pd_radviz.png)
+![Radviz](https://zhongiekka.github.io/img/crime_pd_radviz.png)
 
 # Preparation for Prediction
 
