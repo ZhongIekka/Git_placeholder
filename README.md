@@ -1098,3 +1098,13 @@ Everything else except for 'Description'.
     </tbody>
   </table>
 </div>
+
+# Conclusion
+
+<p style='text-align: justify;'>In summary, the first model performed relatively well and was able to classify crimes with a minimum precision of 73%. This means that at least 73% of the crimes classified as each class are correctly classified. Also, a minimum recall score of 63% means that of all the crimes in each class, the model was able to capture at least 63% of them.</p>
+
+<p style='text-align: justify;'>While we are trying to classify crime generally, focus should be placed on serious crimes where the urgency of prevention is higher than that of other crimes. In that respect, the first model managed to achieve a recall score of 66%, meaning it was able to capture 66% of all crimes that are classified as serious in the Holdout Set.</p>
+
+<p style='text-align: justify;'>As regards Model 2, while overall accuracy appears low, that can be attributed to the low precision and recall scores of class 5, which are the non-serious crimes. If we look at the number of serious crimes which the model is able to classify, the minimum recall score is 66% (aggravated assault). Further, the recall scores for homicide, rape, arson and shooting are all above 70%.</p>
+
+<p style='text-align: justify;'>It can be concluded that the models above are able to reasonably classify crimes , with particular focus on serious crimes. Even though there are still cases that slip through the cracks, it should be noted that it would be unlikely that the models will be the only line of defence when it comes to crime prevention. With the addition of other crime fighting techniques (e.g. neighborhood watch), it would be reasonable to expect that crime rates can be further suppressed.</p>
