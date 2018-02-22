@@ -43,6 +43,93 @@ The Raw Dataset comprises 276529 records of crime from 2012 to 2017 and 15 diffe
 | Premise| The setting in which the crime took place.| Object|
 | Total Incidents| The number of incidents of crime that took place.| Int64|
 
+# At A Glance
+
+## Null Values
+
+| Variable Name        | Null Values           | 
+| :------------------- |:----------------------|
+| CrimeDate|0|
+| CrimeTime|0|
+| CrimeCode|0|
+| Location|2207|
+| Description|0|
+| Inside/Outside|10279|
+| Weapon|180952|
+| Post|224|
+| District|80|
+| Neighborhood|2740|
+| Longitude|2204|
+| Latitude|2204|
+| Location 1|2204|
+| Premise| 10757|
+| Total Incidents| 0|
+
+## First 2 Rows
+
+<div style="overflow-x:auto;">
+  <table border="1" class="dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th></th>
+        <th>CrimeDate</th>
+        <th>CrimeTime</th>
+        <th>CrimeCode</th>
+        <th>Location</th>
+        <th>Description</th>
+        <th>Inside/Outside</th>
+        <th>Weapon</th>
+        <th>Post</th>
+        <th>District</th>
+        <th>Neighborhood</th>
+        <th>Longitude</th>
+        <th>Latitude</th>
+        <th>Location 1</th>
+        <th>Premise</th>
+        <th>Total Incidents</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>0</th>
+        <td>09/02/2017</td>
+        <td>23:30:00</td>
+        <td>3JK</td>
+        <td>4200 AUDREY AVE</td>
+        <td>ROBBERY - RESIDENCE</td>
+        <td>I</td>
+        <td>KNIFE</td>
+        <td>913.0</td>
+        <td>SOUTHERN</td>
+        <td>Brooklyn</td>
+        <td>-76.60541</td>
+        <td>39.22951</td>
+        <td>(39.2295100000, -76.6054100000)</td>
+        <td>ROW/TOWNHO</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <th>1</th>
+        <td>09/02/2017</td>
+        <td>23:00:00</td>
+        <td>7A</td>
+        <td>800 NEWINGTON AVE</td>
+        <td>AUTO THEFT</td>
+        <td>O</td>
+        <td>NaN</td>
+        <td>133.0</td>
+        <td>CENTRAL</td>
+        <td>Reservoir Hill</td>
+        <td>-76.63217</td>
+        <td>39.31360</td>
+        <td>(39.3136000000, -76.6321700000)</td>
+        <td>STREET</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 # EDA
 
 ## Dropping of Rows and Columns
