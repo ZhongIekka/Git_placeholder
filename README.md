@@ -1,5 +1,4 @@
-# Capstone
-Baltimore City Crime Prediction
+# Capstone: Baltimore City Crime Prediction
 
 # Introduction
 
