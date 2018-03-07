@@ -387,7 +387,7 @@ Everything else except for 'Description'.
 
 <p style='text-align: justify;'>In terms of predictions, the independent variables are passed through the model and a vote is taken by the estimators on how the dependent variable should be classified.</p>
 
-<p style='text-align: justify;'>For more information on the AdaBoost Classifier, click <a href="https://medium.com/machine-learning-101/https-medium-com-savanpatel-chapter-6-adaboost-classifier-b945f330af06">here</a>:</p>
+<p style='text-align: justify;'>For more information on the AdaBoost Classifier, click <a href="https://medium.com/machine-learning-101/https-medium-com-savanpatel-chapter-6-adaboost-classifier-b945f330af06">here</a>.</p>
 
 ## Model 1 Training Results
 
@@ -411,6 +411,15 @@ Everything else except for 'Description'.
         <tbody>
           <tr>
             <td></td>
+            <td><strong>Precision</strong></td>
+            <td><strong>Recall</strong></td>
+            <td><strong>f1</strong></td>
+            <td><strong>Precision</strong></td>
+            <td><strong>Recall</strong></td>
+            <td><strong>f1</strong></td>
+            <td><strong>Precision</strong></td>
+            <td><strong>Recall</strong></td>
+            <td><strong>f1</strong></td>
             <td><strong>Precision</strong></td>
             <td><strong>Recall</strong></td>
             <td><strong>f1</strong></td>
@@ -562,6 +571,15 @@ Everything else except for 'Description'.
         <td><strong>Precision</strong></td>
         <td><strong>Recall</strong></td>
         <td><strong>f1</strong></td>
+        <td><strong>Precision</strong></td>
+        <td><strong>Recall</strong></td>
+        <td><strong>f1</strong></td>
+        <td><strong>Precision</strong></td>
+        <td><strong>Recall</strong></td>
+        <td><strong>f1</strong></td>
+        <td><strong>Precision</strong></td>
+        <td><strong>Recall</strong></td>
+        <td><strong>f1</strong></td>
       </tr>
       <tr>
         <td><strong>Logistic Regression (multilinear)</strong></td>
@@ -685,6 +703,15 @@ Everything else except for 'Description'.
     <tbody>
       <tr>
         <td></td>
+        <td><strong>Precision</strong></td>
+        <td><strong>Recall</strong></td>
+        <td><strong>f1</strong></td>
+        <td><strong>Precision</strong></td>
+        <td><strong>Recall</strong></td>
+        <td><strong>f1</strong></td>
+        <td><strong>Precision</strong></td>
+        <td><strong>Recall</strong></td>
+        <td><strong>f1</strong></td>
         <td><strong>Precision</strong></td>
         <td><strong>Recall</strong></td>
         <td><strong>f1</strong></td>
@@ -825,6 +852,21 @@ Everything else except for 'Description'.
         <td><strong>Precision</strong></td>
         <td><strong>Recall</strong></td>
         <td><strong>f1</strong></td>
+        <td><strong>Precision</strong></td>
+        <td><strong>Recall</strong></td>
+        <td><strong>f1</strong></td>
+        <td><strong>Precision</strong></td>
+        <td><strong>Recall</strong></td>
+        <td><strong>f1</strong></td>
+        <td><strong>Precision</strong></td>
+        <td><strong>Recall</strong></td>
+        <td><strong>f1</strong></td>
+        <td><strong>Precision</strong></td>
+        <td><strong>Recall</strong></td>
+        <td><strong>f1</strong></td>
+        <td><strong>Precision</strong></td>
+        <td><strong>Recall</strong></td>
+        <td><strong>f1</strong></td>
       </tr>
       <tr>
         <td><strong>Random Forest Classifier</strong></td>
@@ -906,6 +948,18 @@ Everything else except for 'Description'.
         <td><strong>Precision</strong></td>
         <td><strong>Recall</strong></td>
         <td><strong>f1</strong></td>
+        <td><strong>Precision</strong></td>
+        <td><strong>Recall</strong></td>
+        <td><strong>f1</strong></td>
+        <td><strong>Precision</strong></td>
+        <td><strong>Recall</strong></td>
+        <td><strong>f1</strong></td>
+        <td><strong>Precision</strong></td>
+        <td><strong>Recall</strong></td>
+        <td><strong>f1</strong></td>
+        <td><strong>Precision</strong></td>
+        <td><strong>Recall</strong></td>
+        <td><strong>f1</strong></td>
       </tr>
       <tr>
         <td><strong>Randome Forest Classifier</strong></td>
@@ -933,9 +987,9 @@ Everything else except for 'Description'.
       </tr>
       <tr>
         <td><strong>AdaBoost Classifier</strong></td>
-        <td><strong>0.71</strong></td>
-        <td><strong>0.47</strong></td>
-        <td><strong>0.53</strong></td>
+        <td>0.71</td>
+        <td>0.47</td>
+        <td>0.53</td>
         <td>0.88</td>
         <td>0.48</td>
         <td>0.62</td>
