@@ -962,7 +962,7 @@ Everything else except for 'Description'.
         <td><strong>f1</strong></td>
       </tr>
       <tr>
-        <td><strong>Randome Forest Classifier</strong></td>
+        <td><strong>Random Forest Classifier</strong></td>
         <td>0.70</td>
         <td>0.48</td>
         <td>0.54</td>      
