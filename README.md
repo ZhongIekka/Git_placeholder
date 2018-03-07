@@ -12,7 +12,7 @@
 
 ## Acknowledgements
 
-<p style='text-align: justify;'>The crime data of Baltimore City in the United States of America, Maryland for the years 2012 to 2017 (<strong>‘Raw Dataset’</strong>) was obtained from Kaggle at <a href="https://www.kaggle.com/sohier/crime-in-baltimore/data">this</a> weblink:</p> 
+<p style='text-align: justify;'>The crime data of Baltimore City in the United States of America, Maryland for the years 2012 to 2017 (<strong>‘Raw Dataset’</strong>) was obtained from Kaggle at <a href="https://www.kaggle.com/sohier/crime-in-baltimore/data">this</a> weblink.</p> 
 
 <p style='text-align: justify;'>All acknowledgements and disclaimers given in the link above in relation to the Raw Dataset similarly apply.</p> 
 
