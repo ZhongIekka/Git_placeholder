@@ -251,7 +251,7 @@
 
 <p style='text-align: justify;'>Hoever, some neighborhoods may be too small if they were to be considered meaningfully. An alternative way that the city is partitioned is by different <a href="https://data.baltimorecity.gov/Neighborhoods/Community-Statistical-Areas-Shape/uga5-5yms">community statistical areas</a>, which are larger than neighborhoods. In the map below, community statistical areas (outlined in blue) are larger than the different neighborhoods (outlined in red).</p>
 
-![neighborhoods](https://zhongiekka.github.io/img/geopandas_nhoods_overlay_csa.png)
+![neighborhoods](https://zhongiekka.github.io/geopandas_nhoods_overlay_csa.png)
 
 <p style='text-align: justify;'>We will try to map the occurrence of some of the crimes to give a better idea of how spread out they are.</p>
 
@@ -259,21 +259,21 @@
 
 <p style='text-align: justify;'>The below is a map of all crimes in the dataset. This is not a meaningful visualisation as there are too many overlaps. We shall plot some of the crimes individually just to see if things are clearer.</p>
 
-![neighborhoods](https://zhongiekka.github.io/img/geopandas_all_crimes.png)
+![neighborhoods](https://zhongiekka.github.io/geopandas_all_crimes.png)
 
 #### Larceny
 
 <p style='text-align: justify;'>Let's take a look at larceny, being the most frequently occurring crime in the dataset. When compared with the plots of homicide and rape further below, it can be seen that there are no particular clusters where each crime takes place. The main difference is the density of occurrence. This makes it more difficult for each crime to be accurately classified purely based on geographical factors as there may be many overlaps. </p>
 
-![neighborhoods](https://zhongiekka.github.io/img/geopandas_larceny.png)
+![neighborhoods](https://zhongiekka.github.io/geopandas_larceny.png)
 
 ### Homicide
 
-![neighborhoods](https://zhongiekka.github.io/img/geopandas_homicide.png)
+![neighborhoods](https://zhongiekka.github.io/geopandas_homicide.png)
 
 ### Rape
 
-![neighborhoods](https://zhongiekka.github.io/img/geopandas_rape.png)
+![neighborhoods](https://zhongiekka.github.io/geopandas_rape.png)
 
 ## One Hot Encoding
 
