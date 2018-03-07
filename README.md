@@ -135,7 +135,6 @@ The Raw Dataset comprises 276529 records of crime from 2012 to 2017 and 15 diffe
 
 | Item        | Action           |
 | :------------------- |:----------------------|
-| Weapon|From the information displayed above, it can be seen that more than 50% of the 'Weapons' column are null values. Additionally, one of the values in said column is 'Hands'. We are therefore unable to conclude that no weapons were used if the value input is Nan. The column was therefore dropped.|
 | Location 1|The information contained in this column is repeated from the 'Latitude' and 'Longitude' columns. As it did not provide any more information than we already  had, this column was similarly dropped.|
 | Total Incidents|Because all values in this column are 1, it does not provide any meaningful information with which we can work with. The column was therefore dropped.|
 | Post|It could not be ascertained what the values in this column represented. The column was therefore dropped.|
@@ -174,6 +173,8 @@ The Raw Dataset comprises 276529 records of crime from 2012 to 2017 and 15 diffe
 | ROBBERY - CARJACKING|58246|
 | ARSON|1369|
 | HOMICIDE|1299|
+
+
 
 <p style='text-align: justify;'>On top of the multiclass issue, the dataset is also imbalanced in that some crimes occur a lot more frequently than others (e.g. there are 58246 incidents of larceny compared to 1299 incidents of murder and 1548 incidents of rape).</p>
 
@@ -346,18 +347,6 @@ Everything else except for 'Description'.
 
 <p style='text-align: justify;'>It should be noted that the algorithm used by decision trees are 'greedy' in nature and will they will make a division based on the most information gained in the next node without considering a different permutation that may lead to higher information gain overall.</p>
 
-### Support Vector Classifier
-
-<p style='text-align: justify;'>Support vector machines make use of an algorithm that attempts to find a hyper-plane that separates one class from another linearly. </p>
-
-<p style='text-align: justify;'>The term 'support vector' refers to the datapoints that are at the borders of the cluster of each class. The algorithm will find the largest possible gap between 2 support vectors in its attempt to form a decision boundary. When the datapoints do not lend themselves to linear separation, the model will project the datapoints through to a higher dimension in search of a linearly separable hyper-plane. This is also known as the 'kernel trick'.</p>
-
-<p style='text-align: justify;'>For more information on the kernal trick, please refer to the following link:</p>
-
-<a href=" ">https://towardsdatascience.com/understanding-the-kernel-trick-e0bc6112ef78</a>
-
-<p style='text-align: justify;'>According to sklearn's documentation, the support vector classifier handles multiclass classification according to a one-vs-one scheme. Further, it has a class_weight hyperparameter that performs the same function as in logistic regression.</p>
-
 ### AdaBoost Classifier
 
 <p style='text-align: justify;'>Similar to Random Forest Classifier, the AdaBoost Classifier is an ensemble classsifier that combines several weak classifier algorithms (in the current case the base classifiers are decision trees). </p>
@@ -371,22 +360,6 @@ Everything else except for 'Description'.
 <p style='text-align: justify;'>For more information on the AdaBoost Classifier, please refer to the following link:</p>
 
 <a href=" ">https://medium.com/machine-learning-101/https-medium-com-savanpatel-chapter-6-adaboost-classifier-b945f330af06</a>
-
-### Gradient Boosting Classifier
-
-<p style='text-align: justify;'>Gradient boosting fits complex models by refitting sub-models. It finds the derivative of the loss function (in our case we used deviance). The derivative yields the gradient of the loss function which in turn provides the direction to fit a sub-model with an improved fit.</p>
-
-<p style='text-align: justify;'>Note that sklearn's user guide has provided the following recommendation:</p>
-
-<p style='text-align: justify;'>Classification with more than 2 classes requires the induction of n_classes regression trees at each iteration, thus, the total number of induced trees equals n_classes * n_estimators. For datasets with a large number of classes we strongly recommend to use RandomForestClassifier as an alternative to GradientBoostingClassifier.</p>
-
-### Stochastic Gradient Descent Classifier
-
-<p style='text-align: justify;'>Gradient descent is a process which seeks to minimize the loss function of an algorithm by taking the partial derivative of the coefficient of each independent variable while holding the other independent variables constant.</p>
-
-<p style='text-align: justify;'>In stochastic gradient descent, instead of all the samples updating the gradient at a time, only one sample updates the gradient (iterating over all the observations, though this can change based on specification) within each overall iteration.</p>
-
-<p style='text-align: justify;'>Note that where the loss function is not specified, the default specification is 'hinge' loss and the model gives a linear support vector classifier. </p>
 
 ## Model 1 Training Results
 
@@ -422,111 +395,102 @@ Everything else except for 'Description'.
             <td><strong>Precision</strong></td>
             <td><strong>Recall</strong></td>
             <td><strong>f1</strong></td>
-            <td><strong>Precision</strong></td>
-            <td><strong>Recall</strong></td>
-            <td><strong>f1</strong></td>
-            <td><strong>Precision</strong></td>
-            <td><strong>Recall</strong></td>
-            <td><strong>f1</strong></td>
-            <td><strong>Precision</strong></td>
-            <td><strong>Recall</strong></td>
-            <td><strong>f1</strong></td>
           </tr>
           <tr>
             <td><strong>Logistic Regression (multilinear)</strong></td>
-            <td>0.32</td>
-            <td>0.28</td>
-            <td>0.21</td>
-            <td>0.46</td>
-            <td>0.10</td>
-            <td>0.16</td>
-            <td>0.22</td>
+            <td>0.67</td>
+            <td>0.58</td>
+            <td>0.57</td>
             <td>0.73</td>
-            <td>0.34</td>
-            <td>0.26</td>
-            <td>0.14</td>
-            <td>0.18</td>
-            <td>0.16</td>
-            <td>0.11</td>
-            <td>0.13</td>
+            <td>0.25</td>
+            <td>0.37</td>
             <td>0.32</td>
-            <td>0.83</td>
-            <td>0.46</td>
-            <td>0.21</td>
-            <td>0.05</td>
-            <td>0.08</td>
+            <td>0.74</td>
+            <td>0.44</td>
+            <td>0.93</td>
+            <td>0.93</td>
+            <td>0.93</td>
+            <td>0.54</td>
+            <td>0.41</td>
+            <td>0.47</td>
+            <td>0.48</td>
+            <td>0.92</td>
+            <td>0.63</td>
+            <td>0.80</td>
+            <td>0.62</td>
+            <td>0.70</td>
           </tr>
           <tr>
             <td><strong>Logistic Regression (ovr)</strong></td>
-            <td>0.33</td>
-            <td>0.26</td>
-            <td>0.17</td>
-            <td>0.48</td>
-            <td>0.04</td>
-            <td>0.08</td>
-            <td>0.21</td>
-            <td>0.82</td>
-            <td>0.33</td>
+            <td>0.68</td>
+            <td>0.57</td>
+            <td>0.54</td>
+            <td>0.75</td>
+            <td>0.18</td>
             <td>0.29</td>
-            <td>0.07</td>
-            <td>0.11</td>
-            <td>0.16</td>
-            <td>0.08</td>
-            <td>0.11</td>
-            <td>0.30</td>
-            <td>0.89</td>
-            <td>0.45</td>
-            <td>0.21</td>
-            <td>0.03</td>
-            <td>0.05</td>
+            <td>0.31</td>
+            <td>0.77</td>
+            <td>0.44</td>
+            <td>0.93</td>
+            <td>0.93</td>
+            <td>0.93</td>
+            <td>0.52</td>
+            <td>0.42</td>
+            <td>0.47</td>
+            <td>0.46</td>
+            <td>0.95</td>
+            <td>0.62</td>
+            <td>0.80</td>
+            <td>0.59</td>
+            <td>0.68</td>
           </tr>
           <tr>
             <td><strong>Random Forest Classifier</strong></td>
-            <td>0.75</td>
-            <td>0.75</td>
-            <td>0.75</td>
-            <td>0.74</td>
-            <td>0.86</td>
-            <td>0.79</td>
-            <td>0.76</td>
-            <td>0.64</td>
             <td>0.70</td>
-            <td>0.74</td>
+            <td>0.70</td>
+            <td>0.70</td>
+            <td>0.71</td>
+            <td>0.66</td>
             <td>0.68</td>
-            <td>0.71</td>
-            <td>0.82</td>
+            <td>0.39</td>
+            <td>0.43</td>
+            <td>0.41</td>
+            <td>0.92</td>
+            <td>0.93</td>
+            <td>0.93</td>
+            <td>0.64</td>
+            <td>0.40</td>
+            <td>0.49</td>
             <td>0.62</td>
+            <td>0.84</td>
             <td>0.71</td>
-            <td>0.73</td>
-            <td>0.80</td>
+            <td>0.79</td>
+            <td>0.74</td>
             <td>0.76</td>
-            <td>0.78</td>
-            <td>0.65</td>
-            <td>0.71</td>
           </tr>
           <tr>
-            <td><strong>Support Vector Machine</strong></td>
-            <td>0.38</td>
-            <td>0.30</td>
-            <td>0.25</td>
-            <td>0.59</td>
-            <td>0.16</td>
-            <td>0.26</td>
-            <td>0.22</td>
+            <td><strong>AdaBoost Classifier</strong></td>
+            <td>0.69</td>
+            <td>0.70</td>
+            <td>0.69</td>
+            <td>0.64</td>
+            <td>0.81</td>
             <td>0.72</td>
-            <td>0.34</td>
-            <td>0.30</td>
-            <td>0.11</td>
-            <td>0.16</td>
+            <td>0.42</td>
             <td>0.19</td>
-            <td>0.15</td>
-            <td>0.17</td>
-            <td>0.32</td>
-            <td>0.84</td>
-            <td>0.46</td>
-            <td>0.24</td>
-            <td>0.05</td>
-            <td>0.09</td>
+            <td>0.26</td>
+            <td>0.93</td>
+            <td>0.93</td>
+            <td>0.93</td>
+            <td>0.64</td>
+            <td>0.42</td>
+            <td>0.51</td>
+            <td>0.65</td>
+            <td>0.67</td>
+            <td>0.66</td>
+            <td>0.80</td>
+            <td>0.72</td>
+            <td>0.76</td>
           </tr>
         </tbody>
       </table>
@@ -534,6 +498,12 @@ Everything else except for 'Description'.
   </div>
 </div>       
 
+## Handling Imbalance Via Random Sampling
+
+<p style='text-align: justify;'>To handle the imbalance, a new dataset has been created from resampled data with a balanced number of data points in each class.</p>
+
+<p style='text-align: justify;'>After performing a value count of the number of datapoints in each class, the median number of datapoints was found to be roughly 30000. Random oversampling and undersampling was therefore performed on the different classes such that each class had 30000 datapoints.</p>
+
 ### After Random Resampling of Majority and Minority Classes
 <div style="overflow-x:auto;">
   <table>
@@ -564,183 +534,102 @@ Everything else except for 'Description'.
         <td><strong>Precision</strong></td>
         <td><strong>Recall</strong></td>
         <td><strong>f1</strong></td>
-        <td><strong>Precision</strong></td>
-        <td><strong>Recall</strong></td>
-        <td><strong>f1</strong></td>
-        <td><strong>Precision</strong></td>
-        <td><strong>Recall</strong></td>
-        <td><strong>f1</strong></td>
-        <td><strong>Precision</strong></td>
-        <td><strong>Recall</strong></td>
-        <td><strong>f1</strong></td>
       </tr>
       <tr>
         <td><strong>Logistic Regression (multilinear)</strong></td>
-        <td>0.30</td>
-        <td>0.33</td>
-        <td>0.26</td>      
-        <td>0.23</td>
-        <td>0.10</td>
-        <td>0.14</td>
-        <td>0.34</td>
-        <td>0.74</td>
-        <td>0.47</td>
-        <td>0.27</td>
-        <td>0.13</td>
-        <td>0.18</td>
-        <td>0.29</td>
-        <td>0.11</td>
-        <td>0.16</td>
-        <td>0.35</td>
-        <td>0.83</td>
-        <td>0.49</td>
-        <td>0.29</td>
-        <td>0.05</td>
-        <td>0.09</td>
-      </tr>
-      <tr>
-        <td><strong>Logistic Regression (ovr)</strong></td>
-        <td>0.29</td>
-        <td>0.32</td>
-        <td>0.28</td>
-        <td>0.23</td>
-        <td>0.10</td>
-        <td>0.14</td>
-        <td>0.36</td>
-        <td>0.58</td>
+        <td>0.64</td>
+        <td>0.65</td>
+        <td>0.63</td>      
         <td>0.45</td>
-        <td>0.26</td>
-        <td>0.23</td>
         <td>0.24</td>
-        <td>0.27</td>
-        <td>0.20</td>
-        <td>0.23</td>
-        <td>0.37</td>
-        <td>0.72</td>
-        <td>0.49</td>
-        <td>0.26</td>
-        <td>0.10</td>
-        <td>0.15</td>
-      </tr>
-      <tr>
-        <td><strong>Random Forest Classifier</strong></td>
-        <td>0.59</td>
-        <td>0.60</td>
-        <td>0.59</td>
-        <td>0.50</td>
-        <td>0.38</td>
-        <td>0.43</td>
+        <td>0.31</td>
+        <td>0.53</td>
+        <td>0.75</td>
+        <td>0.62</td>
+        <td>0.90</td>
+        <td>0.93</td>
+        <td>0.92</td>
         <td>0.63</td>
-        <td>0.79</td>
-        <td>0.70</td>
-        <td>0.42</td>
-        <td>0.32</td>
-        <td>0.36</td>
-        <td>0.73</td>
-        <td>0.74</td>
-        <td>0.73</td>
-        <td>0.54</td>
-        <td>0.67</td>
+        <td>0.43</td>
+        <td>0.51</td>
         <td>0.60</td>
-        <td>0.69</td>
-        <td>0.67</td>
+        <td>0.92</td>
+        <td>0.72</td>
+        <td>0.75</td>
+        <td>0.63</td>
         <td>0.68</td>
       </tr>
       <tr>
-        <td><strong>Support Vector Machine</strong></td>
-        <td>0.33</td>
-        <td>0.34</td>
-        <td>0.28</td>
-        <td>0.34</td>
-        <td>0.16</td>
-        <td>0.22</td>
-        <td>0.35</td>
-        <td>0.70</td>
+        <td><strong>Logistic Regression (ovr)</strong></td>
+        <td>0.64</td>
+        <td>0.65</td>
+        <td>0.62</td>
         <td>0.46</td>
-        <td>0.28</td>
-        <td>0.11</td>
-        <td>0.16</td>
-        <td>0.35</td>
-        <td>0.17</td>
-        <td>0.23</td>
-        <td>0.35</td>
-        <td>0.84</td>
-        <td>0.50</td>
-        <td>0.30</td>
-        <td>0.07</td>
-        <td>0.11</td>
-      </tr>
-      <tr>
-        <td><strong>Gradient Boosting Classifier</strong></td>
-        <td>0.39</td>
-        <td>0.40</td>
-        <td>0.37</td>
-        <td>0.43</td>
-        <td>0.29</td>
-        <td>0.35</td>
-        <td>0.39</td>
-        <td>0.66</td>
-        <td>0.49</td>
-        <td>0.34</td>
-        <td>0.24</td>
-        <td>0.28</td>
-        <td>0.40</td>
-        <td>0.25</td>
-        <td>0.31</td>
-        <td>0.42</td>
-        <td>0.76</td>
-        <td>0.54</td>
-        <td>0.37</td>
-        <td>0.17</td>
-        <td>0.23</td>
-      </tr>
-      <tr>
-        <td><strong>Stochastic Gradient Descent Classifier</strong></td>
-        <td>0.23</td>
-        <td>0.25</td>
-        <td>0.24</td>
-        <td>0.20</td>
-        <td>0.16</td>
-        <td>0.18</td>
-        <td>0.32</td>
-        <td>0.54</td>
-        <td>0.40</td>
-        <td>0.21</td>
-        <td>0.23</td>
         <td>0.22</td>
-        <td>0.15</td>
-        <td>0.08</td>
-        <td>0.10</td>
-        <td>0.34</td>
-        <td>0.38</td>
-        <td>0.36</td>
-        <td>0.18</td>
-        <td>0.14</td>
-        <td>0.16</td>
+        <td>0.29</td>
+        <td>0.53</td>
+        <td>0.77</td>
+        <td>0.63</td>
+        <td>0.90</td>
+        <td>0.93</td>
+        <td>0.92</td>
+        <td>0.61</td>
+        <td>0.44</td>
+        <td>0.51</td>
+        <td>0.60</td>
+        <td>0.93</td>
+        <td>0.73</td>
+        <td>0.75</td>
+        <td>0.60</td>
+        <td>0.67</td>
+      </tr>
+      <tr>
+        <td><strong>Random Forest Classifier</strong></td>
+        <td>0.80</td>
+        <td>0.79</td>
+        <td>0.79</td>
+        <td>0.68</td>
+        <td>0.46</td>
+        <td>0.55</td>
+        <td>0.68</td>
+        <td>0.85</td>
+        <td>0.75</td>
+        <td>0.94</td>
+        <td>0.93</td>
+        <td>0.93</td>
+        <td>0.86</td>
+        <td>0.78</td>
+        <td>0.82</td>
+        <td>0.73</td>
+        <td>0.90</td>
+        <td>0.80</td>
+        <td>0.91</td>
+        <td>0.84</td>
+        <td>0.87</td>
       </tr>
       <tr>
         <td><strong>AdaBoost Classifier</strong></td>
+        <td><strong>0.81</strong></td>
+        <td><strong>0.81</strong></td>
+        <td><strong>0.81</strong></td>
+        <td>0.64</td>
         <td>0.56</td>
-        <td>0.56</td>
-        <td>0.56</td>
-        <td>0.44</td>
-        <td>0.42</td>
-        <td>0.43</td>
-        <td>0.67</td>
-        <td>0.71</td>
-        <td>0.69</td>
-        <td>0.35</td>
-        <td>0.37</td>
-        <td>0.36</td>
-        <td>0.73</td>
-        <td>0.69</td>
-        <td>0.71</td>
-        <td>0.53</td>
-        <td>0.57</td>
-        <td>0.55</td>
-        <td>0.65</td>
         <td>0.60</td>
-        <td>0.62</td>
+        <td>0.75</td>
+        <td>0.81</td>
+        <td>0.78</td>
+        <td>0.95</td>
+        <td>0.93</td>
+        <td>0.94</td>
+        <td>0.88</td>
+        <td>0.83</td>
+        <td>0.85</td>
+        <td>0.74</td>
+        <td>0.88</td>
+        <td>0.80</td>
+        <td>0.92</td>
+        <td>0.85</td>
+        <td>0.89</td>
       </tr>
     </tbody>
   </table>
@@ -748,6 +637,8 @@ Everything else except for 'Description'.
 
 ## Model 2 Training Results
 
+<p style='text-align: justify;'>In preparing the training data for the second model, instead of grouping the serious crimes together, all non-serious crimes are grouped as a class. However, as there are more instances of non-serious crimes as compared with serious crimes, the number non-serious crimes was therefore undersampled in such that as a group, their numbers were balanced with the number of each class of serious crimes.</p>
+
 ### After Random Resampling of Majority and Minority Classes
 <div style="overflow-x:auto;">
   <table>
@@ -778,183 +669,102 @@ Everything else except for 'Description'.
         <td><strong>Precision</strong></td>
         <td><strong>Recall</strong></td>
         <td><strong>f1</strong></td>
-        <td><strong>Precision</strong></td>
-        <td><strong>Recall</strong></td>
-        <td><strong>f1</strong></td>
-        <td><strong>Precision</strong></td>
-        <td><strong>Recall</strong></td>
-        <td><strong>f1</strong></td>
-        <td><strong>Precision</strong></td>
-        <td><strong>Recall</strong></td>
-        <td><strong>f1</strong></td>
       </tr>
       <tr>
         <td><strong>Logistic Regression (multilinear)</strong></td>
-        <td>0.29</td>
-        <td>0.30</td>
+        <td>0.58</td>
+        <td>0.58</td>
+        <td>0.56</td>
+        <td>0.64</td>
+        <td>0.34</td>
+        <td>0.45</td>
+        <td>0.44</td>
         <td>0.26</td>
-        <td>0.29</td>
-        <td>0.04</td>
-        <td>0.08</td>
-        <td>0.28</td>
-        <td>0.23</td>
-        <td>0.25</td>
-        <td>0.31</td>
-        <td>0.24</td>
-        <td>0.27</td>
-        <td>0.31</td>
+        <td>0.32</td>
         <td>0.63</td>
-        <td>0.42</td>
-        <td>0.30</td>
-        <td>0.54</td>
-        <td>0.39</td>
-        <td>0.23</td>
-        <td>0.10</td>
-        <td>0.14</td>
+        <td>0.80</td>
+        <td>0.71</td>
+        <td>0.66</td>
+        <td>0.84</td>
+        <td>0.74</td>
+        <td>0.50</td>
+        <td>0.78</td>
+        <td>0.61</td>
+        <td>0.58</td>
+        <td>0.46</td>
+        <td>0.51</td>
       </tr>
       <tr>
         <td><strong>Logistic Regression (ovr)</strong></td>
-        <td>0.28</td>
-        <td>0.27</td>
-        <td>0.25</td>
-        <td>0.21</td>
-        <td>0.15</td>
-        <td>0.18</td>
+        <td>0.57</td>
+        <td>0.58</td>
+        <td>0.54</td>
+        <td>0.65</td>
         <td>0.29</td>
-        <td>0.18</td>
-        <td>0.22</td>
-        <td>0.26</td>
-        <td>0.35</td>
-        <td>0.30</td>
-        <td>0.39</td>
-        <td>0.12</td>
-        <td>0.18</td>
-        <td>0.29</td>
-        <td>0.60</td>
-        <td>0.39</td>
-        <td>0.22</td>
-        <td>0.21</td>
-        <td>0.21</td>
+        <td>0.40</td>
+        <td>0.45</td>
+        <td>0.24</td>
+        <td>0.31</td>
+        <td>0.63</td>
+        <td>0.82</td>
+        <td>0.71</td>
+        <td>0.65</td>
+        <td>0.87</td>
+        <td>0.74</td>
+        <td>0.49</td>
+        <td>0.79</td>
+        <td>0.61</td>
+        <td>0.58</td>
+        <td>0.44</td>
+        <td>0.50</td>
       </tr>
       <tr>
         <td><strong>Random Forest Classifier</strong></td>
-        <td>0.79</td>
-        <td>0.81</td>
-        <td>0.80</td>
-        <td>0.56</td>
-        <td>0.45</td>
-        <td>0.50</td>
-        <td>0.91</td>
+        <td>0.88</td>
+        <td>0.88</td>
+        <td>0.88</td>
+        <td>0.86</td>
+        <td>0.64</td>
+        <td>0.73</td>
+        <td>0.92</td>
         <td>0.97</td>
-        <td>0.94</td>
         <td>0.95</td>
+        <td>0.92</td>
         <td>1.00</td>
-        <td>0.97</td>
-        <td>0.94</td>
+        <td>0.95</td>
+        <td>0.90</td>
         <td>1.00</td>
-        <td>0.97</td>
+        <td>0.95</td>
+        <td>0.82</td>
+        <td>0.95</td>
+        <td>0.88</td>
+        <td>0.88</td>
+        <td>0.74</td>
         <td>0.81</td>
-        <td>0.93</td>
-        <td>0.87</td>
-        <td>0.59</td>
-        <td>0.52</td>
-        <td>0.55</td>
-      </tr>
-      <tr>
-        <td><strong>Support Vector Machine</strong></td>
-        <td>0.42</td>
-        <td>0.45</td>
-        <td>0.42</td>
-        <td>0.30</td>
-        <td>0.13</td>
-        <td>0.18</td>
-        <td>0.45</td>
-        <td>0.57</td>
-        <td>0.51</td>
-        <td>0.53</td>
-        <td>0.59</td>
-        <td>0.56</td>
-        <td>0.47</td>
-        <td>0.65</td>
-        <td>0.54</td>
-        <td>0.43</td>
-        <td>0.56</td>
-        <td>0.48</td>
-        <td>0.37</td>
-        <td>0.18</td>
-        <td>0.24</td>
-      </tr>
-      <tr>
-        <td><strong>Gradient Boosting Classifier</strong></td>
-        <td>0.54</td>
-        <td>0.55</td>
-        <td>0.54</td>
-        <td>0.42</td>
-        <td>0.21</td>
-        <td>0.28</td>
-        <td>0.61</td>
-        <td>0.66</td>
-        <td>0.63</td>
-        <td>0.67</td>
-        <td>0.69</td>
-        <td>0.68</td>
-        <td>0.58</td>
-        <td>0.75</td>
-        <td>0.66</td>
-        <td>0.51</td>
-        <td>0.70</td>
-        <td>0.59</td>
-        <td>0.44</td>
-        <td>0.32</td>
-        <td>0.37</td>
-      </tr>
-      <tr>
-        <td><strong>Stochastic Gradient Descent Classifier</strong></td>
-        <td>0.23</td>
-        <td>0.23</td>
-        <td>0.21</td>
-        <td>0.17</td>
-        <td>0.14</td>
-        <td>0.15</td>
-        <td>0.22</td>
-        <td>0.35</td>
-        <td>0.27</td>
-        <td>0.26</td>
-        <td>0.06</td>
-        <td>0.10</td>
-        <td>0.27</td>
-        <td>0.49</td>
-        <td>0.35</td>
-        <td>0.27</td>
-        <td>0.14</td>
-        <td>0.19</td>
-        <td>0.20</td>
-        <td>0.20</td>
-        <td>0.20</td>
       </tr>
       <tr>
         <td><strong>AdaBoost Classifier</strong></td>
-        <td>0.89</td>
-        <td>0.88</td>
-        <td>0.89</td>
-        <td>0.70</td>
-        <td>0.81</td>
-        <td>0.75</td>
-        <td>0.98</td>
-        <td>0.90</td>
-        <td>0.94</td>
-        <td>0.99</td>
+        <td><strong>0.91</strong></td>
+        <td><strong>0.91</strong></td>
+        <td><strong>0.91</strong></td>
+        <td>0.84</td>
+        <td>0.74</td>
+        <td>0.79</td>
+        <td>0.95</td>
+        <td>0.97</td>
         <td>0.96</td>
+        <td>0.99</td>
+        <td>1.00</td>
+        <td>0.99</td>
         <td>0.98</td>
         <td>1.00</td>
-        <td>0.94</td>
-        <td>0.97</td>
+        <td>0.99</td>
+        <td>0.83</td>
+        <td>0.93</td>
         <td>0.88</td>
-        <td>0.87</td>
         <td>0.88</td>
-        <td>0.79</td>
-        <td>0.82</td>
-        <td>0.80</td>
+        <td>0.84</td>
+        <td>0.86</td>
       </tr>
     </tbody>
   </table>
