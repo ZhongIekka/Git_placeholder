@@ -140,10 +140,6 @@
 
 ## Data Cleaning
 
-### Weapon
-
-<p style='text-align: justify;'>More than half of this column were null values. These columns were therefore filled with 'NONE' and an assumption made that these were crimes where no weapons were used to cause physical injury.</p>
-
 ### Inside/Outside
 
 <p style='text-align: justify;'>This column originally contained 4 types of values, namely 'Inside', 'Outside','I' and 'O'.</p>
